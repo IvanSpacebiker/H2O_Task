@@ -1,10 +1,5 @@
 spring:
   application.name: app
-  datasource:
-    url: jdbc:postgresql://localhost:15432/postgres
-    username: postgres
-    password: postgres
   jpa:
     show-sql: false
     hibernate.ddl-auto: update
-    database: POSTGRESQL

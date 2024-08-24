@@ -3,10 +3,11 @@ package com.kzkv.app.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Data
 @Entity
-@NoArgsConstructor(force = true)
-@RequiredArgsConstructor
 public class Category {
 
     @Id
@@ -14,13 +15,13 @@ public class Category {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private final Type name;
+    private Type name;
 
 
     public enum Type {
         PC,
         LAPTOP,
         MONITOR,
-        DRIVE;
+        DRIVE
     }
 }

@@ -8,10 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class CategoryField {
     @Id

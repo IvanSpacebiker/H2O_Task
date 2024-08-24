@@ -1,14 +1,16 @@
 package com.kzkv.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
-@Setter
-@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Entity
 public class ProductCategoryField {
 
@@ -17,8 +19,11 @@ public class ProductCategoryField {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @JsonIgnore
-    private UUID productId;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonBackReference
+    @ToString.Exclude
+    private Product product;
 
     @ManyToOne()
     @JoinColumn(name = "category_field_id")

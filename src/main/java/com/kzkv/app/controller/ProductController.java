@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
+@RequestMapping ("/products")
 @RestController
 public class ProductController {
 
@@ -24,6 +25,11 @@ public class ProductController {
     @GetMapping()
     ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(productService.getAllProducts());
+    }
+
+    @GetMapping("/category{categoryId}")
+    ResponseEntity<List<Product>> getAllProductsByCategoryId(@PathVariable Long categoryId) {
+        return ResponseEntity.ok(productService.getAllProductsByCategoryId(categoryId));
     }
 
     @PostMapping()

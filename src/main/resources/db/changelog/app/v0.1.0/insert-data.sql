@@ -1,32 +1,15 @@
--- INSERT INTO category (id, name)
--- VALUES ('1', 'PC'),
---        ('2', 'LAPTOP'),
---        ('3', 'MONITOR'),
---        ('4', 'DRIVE');
---
--- INSERT INTO category_field (id, name, category_id)
--- VALUES ('1', 'RAM', '1'),
---        ('2', 'Processor', '1'),
---        ('3', 'Screen Size', '2'),
---        ('4', 'Storage', '2'),
---        ('5', 'Resolution', '3'),
---        ('6', 'Capacity', '4');
---
--- INSERT INTO product (id, serial_number, manufacturer, price, stock_quantity, category_id)
--- VALUES ('6e4f7a8b-9c1d-2e3f-4a5b-7d8e9f1a2b3c', 'SN12345', 'BrandX', 1500.00, 10,
---         '1'),
---        ('7a8b9c1d-2e3f-4a5b-6c7d-8e9f1a2b3c4d', 'SN67890', 'BrandY', 1200.00, 15,
---         '2'),
---        ('8c1d2e3f-4a5b-6c7d-8e9f-1a2b3c4d5e6f', 'SN24680', 'BrandZ', 400.00, 20,
---         '3'),
---        ('9d1e2f3a-4b5c-6d7e-8f9a-2b3c4d5e6f7a', 'SN13579', 'BrandA', 250.00, 30,
---         '4');
---
--- INSERT INTO product_category_field (id, product_id, category_field_id, category_field_value)
--- VALUES ('a1b2c3d4-1234-5678-9abc-def012345678', '6e4f7a8b-9c1d-2e3f-4a5b-7d8e9f1a2b3c',
---         '1', '16GB'),
---        ('b2c3d4e5-2345-6789-abcd-ef0123456789', '6e4f7a8b-9c1d-2e3f-4a5b-7d8e9f1a2b3c',
---         '2', 'Intel i7'),
---        ('cd3e4f5d-3456-789a-bcde-f0123456789a', '7a8b9c1d-2e3f-4a5b-6c7d-8e9f1a2b3c4d',
---         '3', '15.6"');
+--liquibase formatted sql
 
+--changeset Ivan Kazakov:2_1
+INSERT INTO category (id, name)
+VALUES ('1', 'PC'),
+       ('2', 'LAPTOP'),
+       ('3', 'MONITOR'),
+       ('4', 'DRIVE');
+
+--changeset Ivan Kazakov:2_2
+INSERT INTO category_field (id, name, category_id)
+VALUES ('1', 'form-factor', '1'),
+       ('2', 'inch-size', '2'),
+       ('3', 'diagonal', '3'),
+       ('4', 'capacity', '4');

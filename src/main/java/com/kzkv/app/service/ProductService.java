@@ -10,6 +10,7 @@ public interface ProductService {
 
     Optional<Product> getProductById(UUID id);
     List<Product> getAllProducts();
+    List<Product> getAllProductsByCategoryId(Long categoryId);
     Product addProduct(Product product);
     Product editProduct(UUID id, Product product);
     boolean existsById(UUID id);
